@@ -1,0 +1,7 @@
+<h1>Timeline</h1>
+<ul>
+  {{#each model as |timelineItem|}}
+    <li>{{timelineItem.itemText}} / <small>{{timelineItem.kind}}</small></li>
+    <hr>
+  {{/each}}
+</ul>

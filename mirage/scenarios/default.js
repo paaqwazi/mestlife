@@ -1,4 +1,4 @@
-export default function(/* server */) {
+export default function(server) {
 
   /*
     Seed your development database using your factories.
@@ -8,4 +8,9 @@ export default function(/* server */) {
   */
 
   // server.createList('post', 10);
+
+  const N = (n) => Math.round( Math.random()*n )
+
+  server.createList('timeline-item', N(50));
+  server.createList('text-timeline-item', N(50));
 }
