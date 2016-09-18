@@ -1,6 +1,7 @@
+import Reactionable from 'mestlife/mixins/reactionable';
 import DS from 'ember-data';
-import Reactionable from 'mestlife/models/reactionable';
 
-export default Reactionable.extend({
-  itemText: DS.attr('string')
+export default DS.Model.extend(Reactionable, {
+  itemText: DS.attr('string'),
+  kind: DS.attr('string')
 });
