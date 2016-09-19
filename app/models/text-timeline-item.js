@@ -1,5 +1,6 @@
-import TimelineItem from 'mestlife/models/timeline-item';
+import DS from 'ember-data';
+import TimelineItem from 'mestlife/mixins/timeline-item';
 
-export default TimelineItem.extend({
+export default DS.Model.extend(TimelineItem, {
 
 });
