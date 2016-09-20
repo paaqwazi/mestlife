@@ -1,7 +1,16 @@
 <h1>Timeline</h1>
 <ul>
-  {{#each model as |timelineItem|}}
-    <li>{{timelineItem.itemText}} / <small>{{timelineItem.kind}}</small></li>
-    <hr>
+  {{#each model as |post|}}
+      <li class="post-component">
+        <span>{{post.itemText}}</span><br>
+        {{#link-to 'posts.post' post.id}}
+          <span>{{post.comments.length}} comments</span>
+        {{/link-to}}
+        <ul class="summary-comments {{if (eq post.comments.length 0) "hide"}}">
+          {{#each post.comments as |comment|}}
+            <li>{{comment.content}}</li>
+          {{/each}}
+        </ul>
+      </li>
   {{/each}}
 </ul>

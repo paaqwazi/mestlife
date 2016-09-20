@@ -1,0 +1,18 @@
+<text style="font-size:5em;">{{model.itemText}}</text>
+<div>
+  <ul class="summary-comments {{if (eq model.comments.length 0) "hide"}}">
+    {{#each model.comments as |comment|}}
+      <li class="comment-component">
+        {{comment.content}}
+      </li>
+    {{/each}}
+  </ul>
+</div>
+<form>
+  {{input
+      type="text"
+      placeholder="What do you think?"
+      value=commentContent
+      required=required}}
+  <button onclick={{action "createComment"}}></button>
+</form>
